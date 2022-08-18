@@ -1,24 +1,16 @@
 import sys
 
-A, B, C = map(int, sys.stdin.readline().split())
+a, b, c = map(int, sys.stdin.readline().split())
 
-mod = []                # 나머지들 리스트
-num, cnt = A, 1
+def multi(a,n):
 
-while cnt < B:
-
-    tmp = num%C
-    if tmp in mod:
-        res = tmp
-        i, j = mod.index(res), cnt-2
-
-        if i-j == 0:
-            print(tmp)
+    if n == 1:
+        return a%c
+    else:
+        tmp = multi(a,n//2)
+        if n %2 ==0:
+            return (tmp * tmp) % c
         else:
-            print(mod[B%cnt-1])
-        break
+            return (tmp  * tmp *a) %c
 
-
-    mod.append(tmp)
-    num *= A
-    cnt += 1
+print(multi(a,b))

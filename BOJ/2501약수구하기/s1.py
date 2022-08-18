@@ -8,4 +8,4 @@ for i in range(N//2+1, 0, -1):
 
 arr.appendleft(N)
 
-print(0) if len(arr) < K else print(arr[-K])
+print(0 if len(arr) < K else arr[-K])
