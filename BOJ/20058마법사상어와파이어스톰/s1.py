@@ -11,7 +11,8 @@ for q in L:
     size = 2**q
     for r in range(0, N, 2):
         for c in range(0, N, 2):
-            tmp, idx, p = arr[r][c], 0, 0
+            tmp = arr[r][c]
+            idx, p = 0, 0
             while idx < 4:
                 p += 1
                 if p==size:
@@ -20,3 +21,4 @@ for q in L:
                     continue
                 sr, sc = r+rot[idx][0]*p, c+rot[idx][1]*p
                 tmp, arr[sr][sc] = arr[sr][sc], tmp
+
