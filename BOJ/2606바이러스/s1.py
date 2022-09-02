@@ -21,4 +21,4 @@ while Q:
             visit[i] = 1
             Q.append(i)
 
-print(answer-1)ㄴ
+print(answer-1)
